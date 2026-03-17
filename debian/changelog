@@ -1,3 +1,16 @@
+libpve-storage-perl (9.1.1) trixie; urgency=medium
+
+  * cifs: fix connection check for Kerberos-authenticated shares. With
+    smbclient 4.22 (shipped in Debian trixie), the previous guest-user
+    fallback no longer works, causing the check to fail. Properly detect
+    Kerberos from the mount options and use native Kerberos authentication for
+    the connection check instead.
+
+  * api: status: fix storage size values being returned in scientific notation
+    for large storages, which broke deserialization in PDM.
+
+ -- Proxmox Support Team <support@proxmox.com>  Tue, 17 Mar 2026 21:54:31 +0100
+
 libpve-storage-perl (9.1.0) trixie; urgency=medium
 
   * import/export formats: fix regression for import/export of 'images'
