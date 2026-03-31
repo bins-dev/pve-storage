@@ -2119,13 +2119,7 @@ sub volume_export {
             } else {
                 run_command(
                     [
-                        'qemu-img',
-                        'convert',
-                        '-f',
-                        $file_format,
-                        '-O',
-                        'raw',
-                        $file,
+                        'qemu-img', 'convert', '-f', $file_format, '-O', 'raw', $file,
                         '/dev/stdout',
                     ],
                     output => '>&' . fileno($fh),
